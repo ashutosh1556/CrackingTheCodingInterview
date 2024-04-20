@@ -1,9 +1,9 @@
 package strings;
 
-public class demo {
+public class FindSecondMax {
 
     public static void main(String[] args) {
-        demo d = new demo();
+        FindSecondMax d = new FindSecondMax();
         int[] arr = {1};;
         System.out.println(d.findSecondMAx(arr));
     }
