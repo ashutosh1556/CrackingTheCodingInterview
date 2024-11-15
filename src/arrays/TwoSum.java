@@ -1,36 +1,29 @@
-import java.util.HashMap;
-import java.util.Map;
+package arrays;
+
+import org.jetbrains.annotations.NotNull;
 
 public class TwoSum {
-    public int[] twoSum(int[] nums, int target) {
-        // Create a HashMap to store the indices of elements
-        Map<Integer, Integer> map = new HashMap<>();
-
-        // Iterate through the array
-        for (int i = 0; i < nums.length; i++) {
-            int complement = target - nums[i];
-            // If the complement exists in the map, return the indices
-            if (map.containsKey(complement)) {
-                return new int[]{map.get(complement), i};
-            }
-            // Otherwise, put the current element and its index into the map
-            map.put(nums[i], i);
-        }
-
-        // If no solution is found, return an empty array
-        return new int[0];
-    }
-
     public static void main(String[] args) {
-        TwoSum solution = new TwoSum();
-        int[] nums = {2, 7, 11, 15};
-        int target = 9;
-        int[] result = solution.twoSum(nums, target);
+
+        int[] nums = {1, 4, 2, 0, 5, 6};
+        int target = 10;
+        int[] result = twoSum(nums, target);
         if (result.length == 2) {
             System.out.println("Indices: " + result[0] + ", " + result[1]);
             System.out.println("Elements: " + nums[result[0]] + ", " + nums[result[1]]);
         } else {
             System.out.println("No solution found.");
+        }
+    }
+
+    static int @NotNull [] twoSum(int @NotNull [] nums, int target) {
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = 1; j < nums.length; j++) {
+                if (nums[i] + nums[j] == target) {
+                    int[] a = {i, j};
+                    return a;
+                }
+            }
         }
     }
 }
