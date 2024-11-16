@@ -1,22 +1,39 @@
-package strings;
+package ch01_arrays_and_strings;
 
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Class to check if one string is a permutation of another string.
+ * A permutation is a rearrangement of letters where the frequency of each character remains the same.
+ */
 class CheckOneStringPermutationOfAnother {
     
+    /**
+     * Checks prerequisite conditions for permutation check
+     * @param str1 First input string
+     * @param str2 Second input string
+     * @return true if prerequisite conditions are met, false otherwise
+     */
     static boolean checkPrerequisite(String str1, String str2){
         if (str1 == null || str2 == null) return false;
         if (str1.length() != str2.length()) return false;
         return true;
     }
-    
-    // Time Complexity: O(n log n) where n is the length of input strings
-    // - Converting strings to char arrays: O(n)
-    // - Sorting both arrays: O(n log n) 
-    // - Comparing arrays: O(n)
-    // Overall complexity dominated by the sorting: O(n log n)
+
+    /**
+     * Checks if two strings are permutations using sorting approach
+     * Time Complexity: O(n log n) where n is the length of input strings
+     * - Converting strings to char arrays: O(n)
+     * - Sorting both arrays: O(n log n) 
+     * - Comparing arrays: O(n)
+     * Overall complexity dominated by the sorting: O(n log n)
+     * Space Complexity: O(n) for the character arrays
+     * @param str1 First input string
+     * @param str2 Second input string
+     * @return true if strings are permutations, false otherwise
+     */
     static boolean checkPermutationOptimised1(String str1, String str2){
         if(!checkPrerequisite(str1, str2)) return false;
         
@@ -29,6 +46,14 @@ class CheckOneStringPermutationOfAnother {
         return Arrays.equals(str1Array, str2Array);
     }
     
+    /**
+     * Checks if two strings are permutations using hash map approach
+     * Time Complexity: O(n) where n is the length of input strings
+     * Space Complexity: O(k) where k is the number of unique characters
+     * @param str1 First input string
+     * @param str2 Second input string
+     * @return true if strings are permutations, false otherwise
+     */
     static boolean checkPermutationOptimised(String str1, String str2){
         if(!checkPrerequisite(str1, str2)) return false;
         
@@ -61,6 +86,10 @@ class CheckOneStringPermutationOfAnother {
         return true;
     }
 
+    /**
+     * Main method with test cases
+     * @param args command line arguments (not used)
+     */
     public static void main(String[] args) {
         System.out.println("Test Identical Strings: " + checkPermutationOptimised("abc", "abc")); // true
         System.out.println("Test Simple Permutation: " + checkPermutationOptimised("abcd", "dcba")); // true

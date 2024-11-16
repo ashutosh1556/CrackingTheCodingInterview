@@ -1,4 +1,4 @@
-package strings;
+package ch01_arrays_and_strings;
 
 class HasUniqueCharacters {
    static boolean hasUniqueCharacters(String str) {
