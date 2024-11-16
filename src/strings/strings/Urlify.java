@@ -2,6 +2,15 @@ package strings;
 
 class Urlify {
 
+// Time Complexity: O(n) where n is the true length of the string
+// - First pass to count spaces: O(n)
+// - Second pass to replace spaces: O(n)
+// Overall time complexity is O(n)
+
+// Space Complexity: O(n) 
+// - We create a char array of the input string length
+// - No additional data structures are used that grow with input size
+// - The space needed is proportional to input string length
   static String replaceSpaces(String str, int trueLength) {
     char[] chars = str.toCharArray();
     int spaceCount = 0;
@@ -10,7 +19,6 @@ class Urlify {
     for (int i = 0; i < trueLength; i++) {
       if (chars[i] == ' ') {
         spaceCount++;
-      }
     }
 
     // Calculate new index
