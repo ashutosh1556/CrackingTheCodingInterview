@@ -8,7 +8,7 @@ import java.util.Map;
  * Class to check if one string is a permutation of another string.
  * A permutation is a rearrangement of letters where the frequency of each character remains the same.
  */
-class CheckOneStringPermutationOfAnother {
+class CheckPermutation {
     
     /**
      * Checks prerequisite conditions for permutation check
