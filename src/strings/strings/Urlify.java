@@ -33,6 +33,24 @@ class Urlify {
   }
 
   public static void main(String[] args) {
+    // Test case 1: Basic string with spaces
     System.out.println(replaceSpaces("Mr Ashutosh Verma    ", 17));
-  }
+    
+    // Test case 2: String with multiple consecutive spaces
+    System.out.println(replaceSpaces("Hello  World      ", 12));
+    
+    // Test case 3: String with space at start
+    System.out.println(replaceSpaces(" Hello World     ", 12));
+    
+    // Test case 4: String with space at end
+    System.out.println(replaceSpaces("Hello World      ", 11));
+    
+    // Test case 5: String with no spaces
+    System.out.println(replaceSpaces("HelloWorld  ", 10));
+    
+    // Test case 6: Empty string
+    System.out.println(replaceSpaces("", 0));
+    
+    // Test case 7: Single space
+    System.out.println(replaceSpaces("   ", 1));  }
 }
