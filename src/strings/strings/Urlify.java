@@ -19,6 +19,7 @@ class Urlify {
     for (int i = 0; i < trueLength; i++) {
       if (chars[i] == ' ') {
         spaceCount++;
+      }
     }
 
     // Calculate new index
